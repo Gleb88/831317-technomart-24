@@ -8,13 +8,14 @@
     <header class="main-header">
       <div class="top-header">
         <div class="container">          
-          <a href="index.html">
-            <div class="header-logo">
-              <img src="img/logo.png" width="110" height="18" alt="Логотип ТЕХНОМАРТ">
-            </div>
+          <a href="index.html" class="header-logo" aria-label="ссылка на главную страницу">
+            <img src="img/logo.png" width="110" height="18" alt="Логотип ТЕХНОМАРТ">
           </a>
-          <form class="search">
-            <img src="img/icon-search.svg" width="17" height="17" alt="иконка поиска">Поиск:
+          <form class="search" action="" method="POST"> <!--чем заполнять атрибут action? валидатор ругается-->
+            <label>
+              <img src="img/icon-search.svg" width="17" height="17" alt="иконка поиска">Поиск:
+              <input type="search" name="search">
+            </label>
           </form>
          <ul class="order">
            <li>
@@ -34,14 +35,18 @@
            </div>
            <div class="bottom-header-middle">
              <div class="bottom-header-phone">
-               <img src="img/icon-phone.svg" width="18" height="19" alt="иконка телефона">+7(812)555-05-55
+               <a href="tel:+78125550555">
+                 <img src="img/icon-phone.svg" width="18" height="19" alt="иконка телефона">+7(812)555-05-55
+               </a>
              </div> 
              <span class="adress">г.Санкт-Петербург, ул. Б.Конюшная, д 19/8</span>
            </div>
-           <div class="login-link">
-             <img src="img/icon-login.svg" width="20" height="17" alt="иконка закладки"><a href="#"> Войти</a>
+           <div class="user">
+             <a href="#" class="login-link">
+               <img src="img/icon-login.svg" width="20" height="17" alt="иконка закладки">Войти
+             </a>
+             <a href="#" class="registration">Регистрация</a>
            </div>
-           <div class="registration"><a href="#">Регистрация</a></div>
            <nav class="main-navigation">
              <ul class="cite-navigation">
                <li><a href="index.html">Главная</a></li>
@@ -78,19 +83,40 @@
            <h2 class="contacts-title">КОНТАКТЫ</h2>
            <p>Вы можете забрать товары сами</p>
            <img src="img/map.jpg" width="300" height="158" alt="Карта с адресом">
-           <a class="button" href="contacts.html">Заблудились? Напишите нам!</a> 
+           <a class="button" href="contacts.html">Заблудились? Напишите нам!</a> <!--Здесь правильно размечено? или должна быть кнопка?-->
          </div>
         </div>
+      </section>
+      <section class="modal-write-us">
+        <h2 class="visually-hidden">Форма обратной связи</h2>
+        <form class="write-us-form" action="" method="POST">
+          <label>
+            Имя:<input type="text" name="name" placeholder="Имя Фамилия">
+          </label>
+          <label>
+            Ваш e-mail:<input type="text" name="e-mail" placeholder="email@example.com">
+          </label>
+          <label>
+            Текст письма:<textarea placeholder="В свободной форме"></textarea>
+          </label>
+          <button class="modal-close" type="button">Закрыть</button>
+          <div class="modal-write-us-button">                                    <!--В макете область под кнопку выделенна другим цветом, правильно ли я разметил?-->
+            <button class="button" type="submit">Отправить</button>
+          </div>
+        </form>
+      </section>
+      <section class="modal-map">
+        <h2 class="visually-hidden">Как до нас добраться</h2>
+        <img src="img/big-map.jpg" width="970" height="476" alt="Офис компании по адресу г.Санкт-Петербург, ул. Б.Конюшная, д 19/8">
+        <button class="modal-close" type="button">Закрыть</button>
       </section>
     </main>
     <footer class="main-footer">
       <div class="container">
         <section class=" footer-nav">
           <div class="footer-nav-top" > 
-            <a href="index.html">
-              <div class="footer-logo">
-                <img src="img/logo.png" width="138" height="23" alt="Логотип ТЕХНОМАРТ">
-              </div>
+            <a href="index.html" class="footer-logo">
+              <img src="img/logo.png" width="138" height="23" alt="Логотип ТЕХНОМАРТ">
             </a>
             <ul class="footer-navigation-part1">
               <li><a href="company.html">Компания</a></li>
@@ -102,7 +128,7 @@
           </div>
           <div class="footer-nav-bottom">
             <p class="footer-nav-contacts-adress">г.Санкт-Петербург, ул. Б.Конюшная, д 19/8<br>
-              +7(812)555-05-55
+              <a href="tel:+78125550555">+7(812)555-05-55</a>
             </p>
             <ul class="footer-navigation-part2">
               <li><a href="material.html">Материалы</a></li>

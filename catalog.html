@@ -8,13 +8,13 @@
       <header class="main-header">
         <div class="top-header">
           <div class="container">
-            <a href="index.html">
-              <div class="header-logo">
-                <img src="img/logo.png" width="110" height="18" alt="Логотип ТЕХНОМАРТ">
-              </div>
+            <a href="index.html" class="header-logo" aria-label="ссылка на главную страницу">
+              <img src="img/logo.png" width="110" height="18" alt="Логотип ТЕХНОМАРТ">
             </a>
-            <form class="search">
-              <img src="img/icon-search.svg" width="17" height="17" alt="иконка поиска">Поиск:
+            <form class="search" action="" method="POST">
+              <label>
+                <img src="img/icon-search.svg" width="17" height="17" alt="иконка поиска">Поиск:
+              </label>
             </form>
             <ul class="order">
               <li>
@@ -34,13 +34,17 @@
             </div>
             <div class="bottom-header-middle">
               <div class="bottom-header-phone">
-                <img src="img/icon-phone.svg" width="18" height="19" alt="иконка телефона">+7(812)555-05-55
+                <a href="tel:+78125550555">
+                  <img src="img/icon-phone.svg" width="18" height="19" alt="иконка телефона">+7(812)555-05-55
+                </a>
               </div> 
               <span class="adress">г.Санкт-Петербург, ул. Б.Конюшная, д 19/8</span>
             </div>
-            <div class="login-linked">
-                <img src="img/icon-user.svg" width="20" height="18" alt="иконка пользоваиеля">Равшан Джамшутович
-                <img src="img/icon-logout.svg" width="20" height="18" alt="иконка выхода">
+            <div class="user"> <!--не уверен в правильности использования этого блока -->
+                <img src="img/icon-user.svg" width="20" height="18" alt="иконка пользователя">Равшан Джамшутович
+                <a href="#">
+                  <img src="img/icon-logout.svg" width="20" height="18" alt="иконка выхода">
+                </a>
             </div>
             <ul class="breadcrumbs-logined">
               <li class="orders"><a href="#">Мои заказы</a></li>
@@ -63,25 +67,68 @@
      <main>
        <div class="container">
          <ul class="breadcrumbs">
-           <li><a href="index.html"><img src="img/icon-home.svg" width="14" height="12" alt="иклнка домика"></a></li>
+           <li><a href="index.html"><img src="img/icon-home.svg" width="14" height="12" alt="ссылка на главную страницу"></a></li>
            <li><a href="catalog.html">Каталог</a></li>
            <li><a href="tools.html">Инструмент</a></li>
            <li><a href="#">Перфораторы</a></li>
          </ul>
          <div class="place-for-title">
-             <h1>ПЕРФОРАТОРЫ</h1>
+           <h1>ПЕРФОРАТОРЫ</h1>
          </div>
-         <div class="products">
-           <div class="filters">
-             <div class="filters-title">
-               <h2>Фильтр:</h2>
-             </div>
-             <div class="filters-price"></div>
-             <div class="filters-producers"></div>
-             <div class="filters-supply"></div>
-             <div class="filters-button"></div>
-           </div>
-           <section class="catalog">
+         <div class="filters">
+            <div class="filters-title">
+              <h2>Фильтр:</h2>
+              <form class="modal-filter" method="GET" action="">
+               <fieldset>
+                 <legend>Производители:</legend>
+                 <ul>
+                   <li class="filter-option">
+                     <label>
+                       <input class="filter-input-checkbox" type="checkbox" name="BOSH" checked>BOSH
+                     </label>
+                   </li>
+                   <li class="filter-option">
+                      <label>
+                        <input class="filter-input-checkbox" type="checkbox" name="ИНТЕРСКОЛ" >ИНТЕРСКОЛ
+                      </label>
+                   </li>
+                   <li class="filter-option">
+                    <label>
+                      <input class="filter-input-checkbox" type="checkbox" name="MAKITA" checked>MAKITA
+                    </label>
+                   </li>
+                   <li class="filter-option">
+                      <label>
+                        <input class="filter-input-checkbox" type="checkbox" name="DEWALT" >DEWALT
+                      </label>
+                   </li>
+                   <li class="filter-option">
+                      <label>
+                        <input class="filter-input-checkbox" type="checkbox" name="HITACHI" >HITACHI
+                      </label>
+                   </li>
+                 </ul>
+               </fieldset>
+               <fieldset>
+                 <legend>Питание:</legend>
+                 <ul>
+                   <li class="filter-option">
+                     <label>
+                       <input class="filter-input-radio" type="radio" name="power" value="battery" checked>Аккумуляторные
+                     </label>
+                   </li>
+                   <li class="filter-option">
+                      <label>
+                        <input class="filter-input-radio" type="radio" name="power" value="main-power" >Сетевые
+                      </label>
+                   </li>
+                 </ul>
+               </fieldset>
+               <button class="filter-button" type="submit">Показать</button>
+               </form>
+            </div>
+         </div>
+         <section class="catalog">
              <div class="catalog-sopting"></div>
              <div class="catalog-products">
                <ul class="catalog-list">
@@ -113,7 +160,7 @@
                  </li>
                  <li class="catalog-item">
                    <img class="new-item" src="img/new.png" width="60" height="60" alt="Новый товар">
-                   <div class="purchase">
+                   <div class="purchase">  <!--не совсем понял как именно разметить этот блок, этого div недостаточно?-->
                      <button class="buy" >Купить</button>
                      <button class="marker">В закладки</button>
                    </div>
@@ -207,18 +254,23 @@
                </ul>
             </div>
             <div class="catalog-navigation"></div>
-           </section>
-         </div>
+         </section>
        </div>
+       <section class="adding">
+         <img src="img/check-mark.svg" width="66" height="66" alt="галочка"> <!--Непонятно почему галочка не отображается в браузере-->
+         <span class="adding-text">Товар добавлен в корзину</span>
+         <div class="adiing-for-button">
+           <button class="adding-send" type="submit">Оформить заказ</button>
+           <button class="adding-continue" type="button">Продолжить покупки</button>
+         </div>
+       </section>
      </main>
      <footer class="main-footer">
        <div class="container">
          <section class=" footer-nav">
            <div class="footer-nav-top" > 
-             <a href="index.html">
-               <div class="footer-logo">
-                 <img src="img/logo.png" width="138" height="23" alt="Логотип ТЕХНОМАРТ">
-               </div>
+             <a href="index.html" class="footer-logo">
+               <img src="img/logo.png" width="138" height="23" alt="Логотип ТЕХНОМАРТ">
              </a>
              <ul class="footer-navigation-part1">
                <li><a href="company.html">Компания</a></li>
@@ -230,7 +282,7 @@
            </div>
            <div class="footer-nav-bottom">
              <p class="footer-nav-contacts-adress">г.Санкт-Петербург, ул. Б.Конюшная, д 19/8<br>
-               +7(812)555-05-55
+               <a href="tel:+78125550555">+7(812)555-05-55</a>
              </p>
              <ul class="footer-navigation-part2">
                <li><a href="material.html">Материалы</a></li>
