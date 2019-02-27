@@ -40,16 +40,14 @@
         </div>
         <div class="bottom-header">
           <div class="container"> 
-            <div class="bottom-header-left">
+            <p class="bottom-header-left">
               Интернет-магазин строительных материалов и инструментов для ремонта
-            </div>
+            </p>
             <div class="bottom-header-middle">
-              <div class="bottom-header-phone">
-                <a href="tel:+78125550555">
-                  <img src="img/icon-phone.svg" width="18" height="19" alt="иконка телефона">+7(812)555-05-55
-                </a>
-              </div> 
-              <span class="address">г.Санкт-Петербург, ул. Б.Конюшная, д 19/8</span>
+              <a href="tel:+78125550555">
+                <img src="img/icon-phone.svg" width="18" height="19" alt="иконка телефона">+7(812)555-05-55
+              </a>
+              <address class="address">г.Санкт-Петербург, ул. Б.Конюшная, д 19/8</address>
             </div>
             <div class="user-catalog">
               <a href="#" aria-label="имя пользователя">
@@ -88,61 +86,61 @@
          <div class="place-for-title">
            <h1>ПЕРФОРАТОРЫ</h1>
          </div>
-         <div class="filters">
-            <div class="filters-title">
+         <div class="catalog-columns">
+           <div class="filters">
+             <div class="filters-title">
               <h2>Фильтр:</h2>
-            </div>
-            <form class="modal-filter" method="GET" action="">
-              <fieldset>
-                <legend>Производители:</legend>
-                <ul>
-                  <li class="filter-option">
+             </div>
+             <form class="modal-filter" method="GET" action="">
+                <fieldset>
+                 <legend>Производители:</legend>
+                 <ul>
+                   <li class="filter-option">
+                     <label>
+                       <input class="filter-input-checkbox" type="checkbox" name="BOSH" checked>BOSH
+                     </label>
+                   </li>
+                   <li class="filter-option">
+                      <label>
+                        <input class="filter-input-checkbox" type="checkbox" name="ИНТЕРСКОЛ" >ИНТЕРСКОЛ
+                      </label>
+                   </li>
+                   <li class="filter-option">
                     <label>
-                      <input class="filter-input-checkbox" type="checkbox" name="BOSH" checked>BOSH
+                      <input class="filter-input-checkbox" type="checkbox" name="MAKITA" checked>MAKITA
                     </label>
-                  </li>
-                  <li class="filter-option">
+                   </li>
+                   <li class="filter-option">
+                      <label>
+                        <input class="filter-input-checkbox" type="checkbox" name="DEWALT" >DEWALT
+                      </label>
+                   </li>
+                   <li class="filter-option">
+                      <label>
+                        <input class="filter-input-checkbox" type="checkbox" name="HITACHI" >HITACHI
+                      </label>
+                   </li>
+                 </ul>
+               </fieldset>
+               <fieldset>
+                 <legend>Питание:</legend>
+                 <ul>
+                   <li class="filter-option">
                      <label>
-                       <input class="filter-input-checkbox" type="checkbox" name="ИНТЕРСКОЛ" >ИНТЕРСКОЛ
+                       <input class="filter-input-radio" type="radio" name="power" value="battery" checked>Аккумуляторные
                      </label>
-                  </li>
-                  <li class="filter-option">
-                   <label>
-                     <input class="filter-input-checkbox" type="checkbox" name="MAKITA" checked>MAKITA
-                   </label>
-                  </li>
-                  <li class="filter-option">
-                     <label>
-                       <input class="filter-input-checkbox" type="checkbox" name="DEWALT" >DEWALT
-                     </label>
-                  </li>
-                  <li class="filter-option">
-                     <label>
-                       <input class="filter-input-checkbox" type="checkbox" name="HITACHI" >HITACHI
-                     </label>
-                  </li>
-                </ul>
-              </fieldset>
-              <fieldset>
-                <legend>Питание:</legend>
-                <ul>
-                  <li class="filter-option">
-                    <label>
-                      <input class="filter-input-radio" type="radio" name="power" value="battery" checked>Аккумуляторные
-                    </label>
-                  </li>
-                  <li class="filter-option">
-                     <label>
-                       <input class="filter-input-radio" type="radio" name="power" value="main-power" >Сетевые
-                     </label>
-                  </li>
-                </ul>
-              </fieldset>
+                   </li>
+                   <li class="filter-option">
+                      <label>
+                        <input class="filter-input-radio" type="radio" name="power" value="main-power" >Сетевые
+                      </label>
+                   </li>
+                 </ul>
+               </fieldset>
               <button class="filter-button" type="submit">Показать</button>
-            </form>
-
-         </div>
-         <section class="catalog">
+             </form>
+           </div>
+           <section class="catalog">
              <div class="catalog-sorting"></div>
              <div class="catalog-products">
                <ul class="catalog-list">
@@ -268,7 +266,8 @@
                </ul>
             </div>
             <div class="catalog-navigation"></div>
-         </section>
+           </section>
+        </div>
        </div>
        <div class="modal modal-adding">
          <img src="img/check-mark.svg" width="66" height="66" alt="галочка">
